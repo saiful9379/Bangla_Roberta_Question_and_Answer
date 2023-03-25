@@ -1,6 +1,5 @@
 # Bangla_Roberta_Question_and_Answer
-This Bangla Question Answering model has been using Roberta Model.
-
+This Bangla Question Answering model has been using Roberta Model, which is currently trained on a small set of human-annotated data. For training this model, the Bangla QA data has been converted into the SQuAD v2 format as well as preprocessed. The dataset contains 2504 question-answer pairs.
 
 
 Huggingface Link: ![click](https://huggingface.co/saiful9379/Bangla_Roberta_Question_and_Answer)
