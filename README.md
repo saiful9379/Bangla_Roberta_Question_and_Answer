@@ -4,6 +4,66 @@ This Bangla Question Answering model has been using Roberta Model, which is curr
 
 Huggingface Link: ![click](https://huggingface.co/saiful9379/Bangla_Roberta_Question_and_Answer)
 
+
+# Requirements,
+
+Please check this ```requirements.txt```
+
+# Dataset
+
+Here the dataset containts 2504 question-answer and Structure like squad v2.
+
+Example:
+```
+{
+    "data": [
+            "title": "অ্যাপল ইনকর্পোরেটেড",
+            "paragraphs": [
+                {
+                    "context": " অ্যাপল ইনকর্পোরেটেড এর সদর দপ্তর ক্যালির্ফোনিয়ার মধ্য সিলিকন ভ্যালীতে অবস্থিত। ৮৫০,০০ বর্গ ফিট জায়গাতে ৬টি বিল্ডিংয়ে অ্যাপলের বর্তমান সদর ১৯৯৩ সালে থেকে অবস্থান করছে।",
+                    "qas": [
+                        {
+                            "question": "অ্যাপল ইনকর্পোরেটেডের সদর দপ্তর কোথায় ?",
+                            "id": "",
+                            "is_impossible": "",
+                            "answers": [
+                                {
+                                    "answer_start": 34,
+                                    "text": "ক্যালির্ফোনিয়ার মধ্য সিলিকন ভ্যালীতে"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+    ]
+}
+
+```
+
+# Training
+Please check this ```Bangla_Roberta_QA.ipynb``` file
+
+__Configuration__
+```
+max_length=512
+evaluation_strategy="steps",
+learning_rate=2e-5,
+per_device_train_batch_size=44,
+per_device_eval_batch_size=16,
+num_train_epochs=300,
+weight_decay=0.01,
+eval_steps=1000,
+save_total_limit=1
+
+```
+# Evalution
+
+Please check this ```Evaluation.ipynb``` file
+
+# Inference,
+
+
 ```
 from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
 
@@ -27,5 +87,13 @@ QA_input = {'question': question,'context':context}
 prediction = QA(QA_input)
 print(prediction)
 
+```
 
+```
+@misc{Bangla_Robert_QA ,
+  title={Transformer Based Bangla_Robert_QA},
+  author={Md Saiful Islam},
+  howpublished={},
+  year={2023}
+}
 ```
